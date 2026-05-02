@@ -69,9 +69,9 @@ export default function Hero() {
             {/* Final "Takeover" Content (Fades in at the end) */}
             <motion.div 
                style={{ opacity: finalContentOpacity }}
-               className="absolute inset-0 flex flex-col items-center justify-center text-center p-24"
+               className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 md:p-24"
             >
-               <h2 className="text-white text-5xl font-extralight tracking-tight max-w-2xl leading-tight">
+               <h2 className="text-white text-3xl md:text-5xl font-extralight tracking-tight max-w-2xl leading-tight">
                   Crafting minimal interfaces for <span className="italic font-serif">extraordinary</span> brands.
                </h2>
             </motion.div>

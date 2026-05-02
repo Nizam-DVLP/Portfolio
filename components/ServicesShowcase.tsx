@@ -58,11 +58,11 @@ export default function ServicesShowcase() {
 
 
   // Smooth springs
-  const smoothImg1Opacity = useSpring(img1Opacity, { damping: 30, stiffness: 100 });
-  const smoothImg2Y = useSpring(img2Y, { damping: 30, stiffness: 80 });
-  const smoothContent1Opacity = useSpring(content1Opacity);
-  const smoothContent2Opacity = useSpring(content2Opacity);
-  const smoothContent3Opacity = useSpring(content3Opacity);
+  const smoothImg1Opacity = useSpring(img1Opacity, { damping: 25, stiffness: 140 });
+  const smoothImg2Y = useSpring(img2Y, { damping: 25, stiffness: 120 });
+  const smoothContent1Opacity = useSpring(content1Opacity, { damping: 25, stiffness: 140 });
+  const smoothContent2Opacity = useSpring(content2Opacity, { damping: 25, stiffness: 140 });
+  const smoothContent3Opacity = useSpring(content3Opacity, { damping: 25, stiffness: 140 });
 
   return (
     <section ref={containerRef} className="relative md:h-[1100vh] w-full bg-black">

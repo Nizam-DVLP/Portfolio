@@ -22,10 +22,10 @@ export default function OverlayTransition() {
   const scale = useTransform(activeProgress, [0.1, 0.55], [0.98, 1], { clamp: true });
   const opacity = useTransform(activeProgress, [0.1, 0.55], [0.9, 1], { clamp: true });
 
-  // Smooth springs for premium feel
-  const smoothY = useSpring(y, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const smoothScale = useSpring(scale, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const smoothOpacity = useSpring(opacity, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  // Smooth springs for premium feel (Optimized for faster response)
+  const smoothY = useSpring(y, { stiffness: 120, damping: 25, restDelta: 0.001 });
+  const smoothScale = useSpring(scale, { stiffness: 120, damping: 25, restDelta: 0.001 });
+  const smoothOpacity = useSpring(opacity, { stiffness: 120, damping: 25, restDelta: 0.001 });
 
   return (
     <section ref={targetRef} className="relative h-[1200vh] w-full bg-black z-30">

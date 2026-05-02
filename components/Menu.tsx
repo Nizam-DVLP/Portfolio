@@ -8,7 +8,7 @@ const demoItems = [
   { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }
 ];
 
-export default function TechnologyShowcase() {
+export default function Menu() {
   return (
     <div className="h-[600px] relative">
       <FlowingMenu 
