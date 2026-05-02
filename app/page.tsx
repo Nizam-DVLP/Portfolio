@@ -5,12 +5,26 @@ import OverlayTransition from "@/components/OverlayTransition";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import TechnologyShowcase from "@/components/TechnologyShowcase";
 import InfinityScroll from "@/components/InfinityScroll";
-import { motion } from "framer-motion";
-
+import { motion, AnimatePresence } from "framer-motion";
+import SelfIntro from "@/components/SelfIntro";
+import LoaderAnimation from "@/components/LoaderAnimation";
+import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <main className="w-full relative bg-black">
+      <LoaderAnimation onComplete={() => setIsLoading(false)} />
+      
+      <AnimatePresence>
+        {!isLoading && (
+          <motion.div
+            initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
       {/* 1. Hero Section (200vh) - Resulting in Black */}
       <Hero />
 
@@ -24,13 +38,13 @@ export default function Home() {
 
         {/* Technology Showcase Section (1200vh + Intro) */}
         <TechnologyShowcase />
+        <SelfIntro />
         <InfinityScroll />
-
-        
-    
+        <Footer />
       </div>
-
-     
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
